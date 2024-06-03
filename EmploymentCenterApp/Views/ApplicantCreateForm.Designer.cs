@@ -65,7 +65,7 @@
             this.ApplicantPatronymicTextBox.Name = "ApplicantPatronymicTextBox";
             this.ApplicantPatronymicTextBox.Size = new Size(180, 31);
             this.ApplicantPatronymicTextBox.TabIndex = 17;
-            this.ApplicantPatronymicTextBox.TextChanged += this.SallaryTextBox_TextChanged;
+            //this.ApplicantPatronymicTextBox.TextChanged += this.SallaryTextBox_TextChanged;
             // 
             // ApplicantNameTextBox
             // 
@@ -73,7 +73,7 @@
             this.ApplicantNameTextBox.Name = "ApplicantNameTextBox";
             this.ApplicantNameTextBox.Size = new Size(180, 31);
             this.ApplicantNameTextBox.TabIndex = 16;
-            this.ApplicantNameTextBox.TextChanged += this.WorkPlaceTextBox_TextChanged;
+            //this.ApplicantNameTextBox.TextChanged += this.WorkPlaceTextBox_TextChanged;
             // 
             // ApplicantSurnameTextBox
             // 
@@ -125,7 +125,7 @@
             experienceNumericUpDown.Name = "experienceNumericUpDown";
             experienceNumericUpDown.Size = new Size(180, 31);
             experienceNumericUpDown.TabIndex = 20;
-            experienceNumericUpDown.ValueChanged += this.experienceNumericUpDown_ValueChanged;
+            //experienceNumericUpDown.ValueChanged += this.experienceNumericUpDown_ValueChanged;
             // 
             // ApplicantCreateForm
             // 
@@ -162,5 +162,7 @@
         private Label label2;
         private Label label1;
         private NumericUpDown experienceNumericUpDown;
+        private TextBox ApplicantPatronymicTextBox;
+        private TextBox ApplicantNameTextBox;
     }
 }
