@@ -62,6 +62,7 @@
             StartButton.TabIndex = 2;
             StartButton.Text = "Запустить";
             StartButton.UseVisualStyleBackColor = true;
+            StartButton.Click += StartButton_Click;
             // 
             // WelcomeForm
             // 

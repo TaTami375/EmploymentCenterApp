@@ -52,9 +52,10 @@
             DBActionButton = new Button();
             DBActionComboBox = new ComboBox();
             filterGroupBox = new GroupBox();
+            employedFilterRadioButton = new RadioButton();
+            unemployedFilterRadioButton = new RadioButton();
             dropFiltersLink = new LinkLabel();
             filterButton = new Button();
-            filterСheckBox = new CheckBox();
             label1 = new Label();
             deleteApplicantButton = new Button();
             editApplicantButton = new Button();
@@ -128,9 +129,8 @@
             // 
             // SortComboBox
             // 
-            SortComboBox.Enabled = false;
             SortComboBox.FormattingEnabled = true;
-            SortComboBox.Items.AddRange(new object[] { "Удалить БД", "Создать БД", "Сохранить БД в файл" });
+            SortComboBox.Items.AddRange(new object[] { "По з\\п (от меньшей к большей)", "По з\\п (от большей к меньшей)", "По квалификации (высокая=>средняя=>низкая)", "По квалификации (низкая=>средняя=>высокая)" });
             SortComboBox.Location = new Point(6, 242);
             SortComboBox.Margin = new Padding(4);
             SortComboBox.Name = "SortComboBox";
@@ -167,9 +167,8 @@
             // 
             // SearchComboBox
             // 
-            SearchComboBox.Enabled = false;
             SearchComboBox.FormattingEnabled = true;
-            SearchComboBox.Items.AddRange(new object[] { "Удалить БД", "Создать БД", "Сохранить БД в файл" });
+            SearchComboBox.Items.AddRange(new object[] { "По названию", "По месту" });
             SearchComboBox.Location = new Point(6, 146);
             SearchComboBox.Margin = new Padding(4);
             SearchComboBox.Name = "SearchComboBox";
@@ -305,7 +304,6 @@
             // 
             // DBActionComboBox
             // 
-            DBActionComboBox.Enabled = false;
             DBActionComboBox.FormattingEnabled = true;
             DBActionComboBox.Items.AddRange(new object[] { "Удалить БД", "Создать БД", "Сохранить БД в файл" });
             DBActionComboBox.Location = new Point(8, 58);
@@ -316,23 +314,46 @@
             // 
             // filterGroupBox
             // 
+            filterGroupBox.Controls.Add(employedFilterRadioButton);
+            filterGroupBox.Controls.Add(unemployedFilterRadioButton);
             filterGroupBox.Controls.Add(dropFiltersLink);
             filterGroupBox.Controls.Add(filterButton);
-            filterGroupBox.Controls.Add(filterСheckBox);
             filterGroupBox.Controls.Add(label1);
             filterGroupBox.Location = new Point(23, 593);
             filterGroupBox.Margin = new Padding(4);
             filterGroupBox.Name = "filterGroupBox";
             filterGroupBox.Padding = new Padding(4);
-            filterGroupBox.Size = new Size(612, 88);
+            filterGroupBox.Size = new Size(710, 88);
             filterGroupBox.TabIndex = 15;
             filterGroupBox.TabStop = false;
+            // 
+            // employedFilterRadioButton
+            // 
+            employedFilterRadioButton.AutoSize = true;
+            employedFilterRadioButton.Location = new Point(102, 36);
+            employedFilterRadioButton.Name = "employedFilterRadioButton";
+            employedFilterRadioButton.Size = new Size(165, 29);
+            employedFilterRadioButton.TabIndex = 5;
+            employedFilterRadioButton.TabStop = true;
+            employedFilterRadioButton.Text = "Трудоустроены";
+            employedFilterRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // unemployedFilterRadioButton
+            // 
+            unemployedFilterRadioButton.AutoSize = true;
+            unemployedFilterRadioButton.Location = new Point(283, 36);
+            unemployedFilterRadioButton.Name = "unemployedFilterRadioButton";
+            unemployedFilterRadioButton.Size = new Size(175, 29);
+            unemployedFilterRadioButton.TabIndex = 4;
+            unemployedFilterRadioButton.TabStop = true;
+            unemployedFilterRadioButton.Text = "В поиске работы";
+            unemployedFilterRadioButton.UseVisualStyleBackColor = true;
             // 
             // dropFiltersLink
             // 
             dropFiltersLink.AutoSize = true;
             dropFiltersLink.LinkColor = Color.FromArgb(64, 64, 64);
-            dropFiltersLink.Location = new Point(495, 36);
+            dropFiltersLink.Location = new Point(602, 36);
             dropFiltersLink.Margin = new Padding(4, 0, 4, 0);
             dropFiltersLink.Name = "dropFiltersLink";
             dropFiltersLink.Size = new Size(89, 25);
@@ -342,7 +363,7 @@
             // 
             // filterButton
             // 
-            filterButton.Location = new Point(332, 29);
+            filterButton.Location = new Point(465, 32);
             filterButton.Margin = new Padding(4);
             filterButton.Name = "filterButton";
             filterButton.Size = new Size(130, 36);
@@ -350,22 +371,11 @@
             filterButton.Text = "Выполнить";
             filterButton.UseVisualStyleBackColor = true;
             // 
-            // filterСheckBox
-            // 
-            filterСheckBox.AutoSize = true;
-            filterСheckBox.Location = new Point(122, 37);
-            filterСheckBox.Margin = new Padding(4);
-            filterСheckBox.Name = "filterСheckBox";
-            filterСheckBox.Size = new Size(176, 29);
-            filterСheckBox.TabIndex = 1;
-            filterСheckBox.Text = "В поиске работы";
-            filterСheckBox.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            label1.Location = new Point(20, 36);
+            label1.Location = new Point(8, 34);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(93, 30);
@@ -511,7 +521,6 @@
         private GroupBox filterGroupBox;
         private LinkLabel dropFiltersLink;
         private Button filterButton;
-        private CheckBox filterСheckBox;
         private Label label1;
         private Button deleteApplicantButton;
         private Button editApplicantButton;
@@ -524,5 +533,7 @@
         private ColumnHeader ApplicantName;
         private ColumnHeader Patronymic;
         private Button JournalButton;
+        private RadioButton employedFilterRadioButton;
+        private RadioButton unemployedFilterRadioButton;
     }
 }
